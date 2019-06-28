@@ -50,7 +50,7 @@ store.dispatch(actions.add('bar')); // Error: Argument of type '"bar"' is not as
 
 ## Other examples
 
-You can also take a looka at standard [Counter](https://github.com/smith-chris/redux-solve-counter-example) and [TodoMVC](https://github.com/smith-chris/redux-solve-todomvc-example) examples implemented using `redux-solve`.
+You can also take a look at standard [Counter](https://github.com/smith-chris/redux-solve-counter-example) and [TodoMVC](https://github.com/smith-chris/redux-solve-todomvc-example) examples implemented using `redux-solve`.
 
 ## Support
 
