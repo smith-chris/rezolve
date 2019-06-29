@@ -43,14 +43,78 @@ store.subscribe(() => {
 
 store.dispatch(actions.increment()); // Value of the counter is: 1
 store.dispatch(actions.decrement()); // Value of the counter is: 0
-store.dispatch(actions.foo()); // Error: Property 'foo' does not exist on type [...].
 store.dispatch(actions.add(5)); // Value of the counter is: 5
+
+store.dispatch(actions.foo()); // Error: Property 'foo' does not exist on type [...].
 store.dispatch(actions.add('bar')); // Error: Argument of type '"bar"' is not assignable to parameter of type 'number'.
 ```
 
-## Other examples
+I encourage you to take a look at [Counter example](https://github.com/smith-chris/redux-solve-counter-example) implemented with `redux-solve`.
 
-You can also take a look at standard [Counter](https://github.com/smith-chris/redux-solve-counter-example) and [TodoMVC](https://github.com/smith-chris/redux-solve-todomvc-example) examples implemented using `redux-solve`.
+## Advanced example
+
+The file structure is just a suggestion, it showcases how you could go about spreding the logic into separate modules. You can also see [TodoMVC example](https://github.com/smith-chris/redux-solve-todomvc-example) implemented using `redux-solve`.
+
+> src/reducers/counter/resolvers.ts
+
+```ts
+export type CounterState = number;
+
+export const increment = (state: CounterState) => (): CounterState => state + 1;
+
+export const decrement = (state: CounterState) => (): CounterState => state - 1;
+
+export const add = (state: CounterState) => (amount: number): CounterState =>
+  state + amount;
+```
+
+> src/reducers/counter/index.ts
+
+```ts
+import { makeActionCreators, makeReducer } from 'redux-solve';
+import { CounterState } from './resolvers';
+import * as counterResolvers from './resolvers';
+
+export const initialState: CounterState = 0;
+
+export const counterActions = makeActionCreators(
+  counterResolvers,
+  initialState
+);
+export const counterReducer = makeReducer(counterResolvers, initialState);
+```
+
+> src/reducers/index.ts
+
+```ts
+import { combineReducers } from 'redux';
+import { counterReducer } from './counter';
+
+export const rootReducer = combineReducers({
+  counter: counterReducer,
+});
+```
+
+> src/index.ts
+
+```ts
+import { createStore } from 'redux';
+import { rootReducer } from './reducers';
+import { counterActions } from './reducers/counter';
+
+const store = createStore(rootReducer);
+
+store.subscribe(() => {
+  console.log('Value of the counter is: ', store.getState().counter);
+});
+
+store.dispatch(counterActions.increment()); // Value of the counter is: 1
+store.dispatch(counterActions.decrement()); // Value of the counter is: 0
+store.dispatch(counterActions.add(5)); // Value of the counter is: 5
+
+store.dispatch(actions.foo()); // Error: Property 'foo' does not exist on type [...].
+store.dispatch(actions.add('bar')); // Error: Argument of type '"bar"' is not assignable to parameter of type 'number'.
+```
 
 ## Support
 
