@@ -1,4 +1,4 @@
-# Redux Solve
+# <img src='./logo.png' height='60' alt='Redux Solve Logo' />
 
 Redux helper that reduces boilerplate to the complete minimum. Simple as that.
 
@@ -49,11 +49,11 @@ store.dispatch(actions.foo()); // Error: Property 'foo' does not exist on type [
 store.dispatch(actions.add('bar')); // Error: Argument of type '"bar"' is not assignable to parameter of type 'number'.
 ```
 
-I encourage you to take a look at [Counter example](https://github.com/smith-chris/redux-solve-counter-example) implemented with `redux-solve`.
+I encourage you to take a look at [Counter example repo](https://github.com/smith-chris/redux-solve-counter-example).
 
 ## Advanced example
 
-The file structure is just a suggestion, it showcases how you could go about spreding the logic into separate modules. You can also see [TodoMVC example](https://github.com/smith-chris/redux-solve-todomvc-example) implemented using `redux-solve`.
+The file structure presented here is just a suggestion, it showcases how you could go about spreding the logic into separate modules. You can also see [TodoMVC example](https://github.com/smith-chris/redux-solve-todomvc-example) for more advanced usage.
 
 > src/reducers/counter/resolvers.ts
 
