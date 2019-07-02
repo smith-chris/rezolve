@@ -1,4 +1,4 @@
-# <img src='./logo.png' height='60' alt='Redux Solve Logo' />
+# <img src='https://github.com/smith-chris/redux-solve/raw/master/logo.png' height='60' alt='Redux Solve' />
 
 Redux helper that reduces boilerplate to the complete minimum. Simple as that.
 
