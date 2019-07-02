@@ -1,8 +1,10 @@
-# <img src='https://github.com/smith-chris/redux-solve/raw/master/logo.png' height='60' alt='Redux Solve' />
+# <img src='https://github.com/smith-chris/redux-solve/raw/master/assets/logo.png' height='60' alt='Redux Solve' />
 
 Redux helper that reduces boilerplate to the complete minimum. Simple as that.
 
 Best used with Typescript.
+
+<img src='https://github.com/smith-chris/redux-solve/raw/master/assets/hl.gif' alt='Highlight' />
 
 ## Installation
 
