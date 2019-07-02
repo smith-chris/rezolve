@@ -1,6 +1,6 @@
 {
   "name": "redux-solve",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "dist/index.js",
   "module": "dist/redux-solve.esm.js",
   "typings": "dist/index.d.ts",
@@ -10,7 +10,8 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test"
+    "test": "tsdx test",
+    "pub": "yarn build && yarn publish"
   },
   "peerDependencies": {},
   "husky": {
