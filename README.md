@@ -1,28 +1,28 @@
-# <img src='https://github.com/smith-chris/redux-solve/raw/master/assets/logo.png' height='60' alt='Redux Solve' />
+# <img src='https://github.com/smith-chris/rezolve/raw/master/assets/logo.png' height='60' alt='Redux Solve' />
 
 Redux helper that reduces boilerplate to the complete minimum. Simple as that.
 
 Best used with Typescript.
 
-<img src='https://github.com/smith-chris/redux-solve/raw/master/assets/hl.gif' alt='Highlight' />
+<img src='https://github.com/smith-chris/rezolve/raw/master/assets/hl.gif' alt='Highlight' />
 
 ## Installation
 
 ```bash
-npm i redux-solve
+npm i rezolve
 ```
 
 or
 
 ```bash
-yarn add redux-solve
+yarn add rezolve
 ```
 
 ## Basic example
 
 ```ts
 import { createStore } from 'redux';
-import { makeReducer, makeActionCreators } from 'redux-solve';
+import { makeReducer, makeActionCreators } from 'rezolve';
 
 type State = number;
 
@@ -51,11 +51,11 @@ store.dispatch(actions.foo()); // Error: Property 'foo' does not exist on type [
 store.dispatch(actions.add('bar')); // Error: Argument of type '"bar"' is not assignable to parameter of type 'number'.
 ```
 
-I encourage you to take a look at [Counter example repo](https://github.com/smith-chris/redux-solve-counter-example).
+I encourage you to take a look at [Counter example repo](https://github.com/smith-chris/rezolve-counter-example).
 
 ## Advanced example
 
-The file structure presented here is just a suggestion, it showcases how you could go about spreding the logic into separate modules. You can also see [TodoMVC example](https://github.com/smith-chris/redux-solve-todomvc-example) for more advanced usage.
+The file structure presented here is just a suggestion, it showcases how you could go about spreding the logic into separate modules. You can also see [TodoMVC example](https://github.com/smith-chris/rezolve-todomvc-example) for more advanced usage.
 
 > src/reducers/counter/resolvers.ts
 
@@ -73,7 +73,7 @@ export const add = (state: CounterState) => (amount: number): CounterState =>
 > src/reducers/counter/index.ts
 
 ```ts
-import { makeActionCreators, makeReducer } from 'redux-solve';
+import { makeActionCreators, makeReducer } from 'rezolve';
 import { CounterState } from './resolvers';
 import * as counterResolvers from './resolvers';
 
@@ -120,8 +120,8 @@ store.dispatch(actions.add('bar')); // Error: Argument of type '"bar"' is not as
 
 ## Support
 
-Please [open an issue](https://github.com/smith-chris/redux-solve/issues/new) for support.
+Please [open an issue](https://github.com/smith-chris/rezolve/issues/new) for support.
 
 ## Contributing
 
-Please contribute using [Github Flow](https://guides.github.com/introduction/flow/). Create a branch, add commits, and [open a pull request](https://github.com/smith-chris/redux-solve/compare).
+Please contribute using [Github Flow](https://guides.github.com/introduction/flow/). Create a branch, add commits, and [open a pull request](https://github.com/smith-chris/rezolve/compare).
