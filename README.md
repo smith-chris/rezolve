@@ -1,6 +1,6 @@
 # <img src='https://github.com/smith-chris/rezolve/raw/master/assets/logo.png' height='60' alt='Rezolve' />
 
-Functions that help to reduce flux (Redux, useReducer) boilerplate to the bare minimum. Simple as that.
+Helper functions that reduce flux (Redux, useReducer) boilerplate to the complete minimum. Simple as that.
 
 Best used with Typescript.
 
