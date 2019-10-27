@@ -99,7 +99,7 @@ type GetActionDispatcher<T extends ActionResolver> = ReturnType<T> extends (
  * @param initialState Initial state of the store
  * @returns a hook that gives you state & already bound action creators.
  */
-export const makeResolvers = <U extends object, T extends ActionResolvers<U>>(
+export const makeResolvers = <U, T extends ActionResolvers<U>>(
   actionResolvers: T,
   initialState: U
 ) => {
