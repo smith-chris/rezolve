@@ -1,5 +1,5 @@
 {
-  "include": ["src", "types"],
+  "include": ["src", "types", "test/index.test.ts"],
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
