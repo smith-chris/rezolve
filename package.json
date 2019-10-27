@@ -1,6 +1,6 @@
 {
   "name": "rezolve",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": {
     "name": "Krzysztof Kowalski",
     "email": "kowalski.k@outlook.com"
@@ -20,7 +20,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test",
-    "pub": "yarn build && yarn publish"
+    "pub": "yarn test && yarn build && yarn publish"
   },
   "husky": {
     "hooks": {
