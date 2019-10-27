@@ -1,6 +1,6 @@
-# <img src='https://github.com/smith-chris/rezolve/raw/master/assets/logo.png' height='60' alt='Redux Solve' />
+# <img src='https://github.com/smith-chris/rezolve/raw/master/assets/logo.png' height='60' alt='Rezolve' />
 
-Redux helper that reduces boilerplate to the complete minimum. Simple as that.
+Functions that help to reduce flux (Redux, useReducer) boilerplate to the bare minimum. Simple as that.
 
 Best used with Typescript.
 
@@ -18,7 +18,37 @@ or
 yarn add rezolve
 ```
 
-## Basic example
+## Basic Hooks example
+
+The `makeResolvers` hook creator uses `useReducer` under the hood.
+
+```ts
+import React from 'react';
+import { makeResolvers } from 'rezolve';
+
+const useCounterResolvers = makeResolvers(
+  {
+    increment: state => () => state + 1,
+    decrement: state => () => state - 1,
+    add: state => (amount: number) => state + amount,
+  },
+  0
+);
+
+export const Counter = () => {
+  const [state, actions] = useCounterResolvers();
+
+  return (
+    <p>
+      Clicked: {state} times <button onClick={actions.increment}>+</button>{' '}
+      <button onClick={actions.decrement}>-</button>{' '}
+      <button onClick={() => actions.add(5)}>Increment by 5</button>{' '}
+    </p>
+  );
+};
+```
+
+## Basic Redux example
 
 ```ts
 import { createStore } from 'redux';
@@ -53,7 +83,7 @@ store.dispatch(actions.add('bar')); // Error: Argument of type '"bar"' is not as
 
 I encourage you to take a look at [Counter example repo](https://github.com/smith-chris/rezolve-counter-example).
 
-## Advanced example
+## Advanced Redux example
 
 The file structure presented here is just a suggestion, it showcases how you could go about spreding the logic into separate modules. You can also see [TodoMVC example](https://github.com/smith-chris/rezolve-todomvc-example) for more advanced usage.
 

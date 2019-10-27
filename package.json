@@ -1,6 +1,15 @@
 {
   "name": "rezolve",
   "version": "0.2.1",
+  "author": {
+    "name": "Krzysztof Kowalski",
+    "email": "kowalski.k@outlook.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smith-chris/rezolve"
+  },
+  "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/rezolve.esm.js",
   "typings": "dist/index.d.ts",
