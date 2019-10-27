@@ -1,5 +1,4 @@
 import { useReducer, useMemo, Dispatch } from 'react';
-import mapValues from 'lodash.mapvalues';
 
 /**
  * Action is simply an object of a fixed shape. The `type` string property is what differentiates actions between each other. Standard redux stuff.
@@ -108,7 +107,13 @@ export const makeResolvers = <U extends object, T extends ActionResolvers<U>>(
   const actions = makeActionCreators(actionResolvers, initialState);
 
   const wrapActionsWithDispatch = (dispatch: Dispatch<any>) =>
-    mapValues(actions, a => (...params: any[]) => dispatch(a(...params)));
+    Object.entries(actions).reduce(
+      (acc, [key, action]) => ({
+        ...acc,
+        [key]: (...params: any[]) => dispatch(action(...params)),
+      }),
+      {}
+    );
 
   return () => {
     const [state, dispatch] = useReducer(reducer, initialState);
